@@ -1,0 +1,245 @@
+/* 
+========================================================================== */
+/* Content
+==========================================================================
+ */
+
+.content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: $bgc_dark;
+  top: 9vh;
+
+}
+
+/* 
+========================================================================== */
+/* HEADER
+==========================================================================
+ */
+
+/*   MENU    */
+
+.header {
+  position: relative;
+  background-color: $bgc_dark;
+  width: 100vw;
+}
+
+.header__navbar {
+  position: fixed;
+  width: 100%;
+  height: 4em;
+  transition: 0.4s ease;
+  background-color: $bgc_dark;
+  box-shadow: 05px 10px 25px 5px rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 10;
+  top: 0em;
+  left: 0em;
+
+  display: flex;
+  align-items: center;
+
+  &--img {
+    position: relative;
+    top: 0.5vh;
+    left: 5vw;
+    width: 7em;
+    height: 3em;
+    cursor: pointer;
+  }
+}
+
+
+/*   H1    */
+
+.header__h1 {
+  position: relative;
+  font-family: $Font-Family;
+  font-size: 1.2em;
+  color: $font_color;
+  letter-spacing: 0;
+  line-height: 33px;
+  font-weight: 700;
+  padding: 0.5em;
+  color: $font_color;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.h1_pink {
+  color: $pink;
+}
+
+.header__search {
+  position: relative;
+  height: 50%;
+  transform: translate(8%, 40%);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  width: 90%;
+  overflow: hidden;
+  transition: 0.4s ease;
+  background-color: $bgc_dark;
+
+  box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.header__search--active {
+  bottom: -60px;
+}
+
+.search__label {
+  display: none;
+}
+
+.header__search-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 60px;
+  position: relative;
+}
+.header__search-content input {
+  position: relative;
+  height: 60px;
+  width: 100%;
+  padding-left: 2em;
+  background-color: $bgc_dark;
+  border: none;
+  font-size: 1em;
+  color: $white;
+  font-family: $Font-Family;
+  padding-left: 3em;
+  padding-right: 1em;
+}
+.header__search-content div {
+  position: absolute;
+  height: 40px;
+  width: 90px;
+  top: 1.5em;
+  left: 5vw;
+  background: none;
+  background-color: transparent;
+  border: 0em;
+  opacity: 0.85;
+  font-size: 1em;
+  color: $pink;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+}
+
+
+/*==============================
+	Grid Results
+==============================*/
+
+.resultsGrid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 90%;
+  top: 3em;
+  margin: 0 auto;
+  height: auto;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+
+
+/* 
+==========================================================================
+/* 48em = 768px @ 16px font
+==========================================================================
+*/
+
+@media screen and (min-width: 768px) {
+  .resultsGrid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+  }
+}
+
+/* 
+========================================================================== */
+/* Header
+/* 64em = 1024px @ 16px font
+==========================================================================
+*/
+
+@media screen and (min-width: 1024px) {
+  
+  /*   MENU    */
+
+  .content {
+    top: 16vh;
+  }
+
+  .header__navbar {
+    height: 6em;
+    display: flex;
+    padding: 1em;
+
+    &--img {
+      position: relative;
+      top: 0.5vh;
+      left: 5vw;
+      width: 12.83em;
+      height: 5em;
+      cursor: pointer;
+    }
+  }
+
+  .current_link {
+    color: $pink;
+  }
+
+  /*   H1    */
+
+  .header__h1 {
+    padding-top: 0.5em;
+    font-size: 3em;
+
+  }
+
+  .header__search {
+    transform: translate(9%, 50%);
+    width: 85%;
+  }
+
+  .header__search-content input {
+    font-size: 1.5em;
+    padding-left: 3em;
+  }
+
+  .header__search-content div {
+    width: 90px;
+    font-size: 2em;
+    left: 1.5%;
+    top: 0.5em;
+  }
+
+  /*  Results Grid  */
+
+  .resultsGrid {
+
+    width: 90%;
+    grid-template-columns: 23% 23% 23% 23%;
+    margin: 0 auto;
+    top: 5em;
+    margin-bottom: 3em;
+    left: 3vw;
+    padding-bottom: 3em;
+  }
+}

@@ -1,0 +1,119 @@
+/* 
+========================================================================== */
+/* Footer
+==========================================================================
+ */
+
+.footer {
+  position: relative;
+  align-items: center;
+  padding-bottom: 1em;
+  top: 2.5em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 0;
+  height: 12em;
+  margin-bottom: 1em;
+
+  &__p {
+    @include paragraph_mobile();
+    font-size: 0.9em;
+    text-align: center;
+    padding: 0.4em;
+  }
+
+  &__socialmedia {
+    display: flex;
+    flex-direction: row;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      color: $white;
+      padding-left: 0.7em;
+      padding-right: 0.7em;
+      font-size: 1.1em;
+    }
+
+    a {
+      color: $pink;
+    }
+
+    a:hover {
+      color: $font_color;
+    }
+  }
+
+  &__copyright {
+    @include paragraph_mobile();
+    font-size: 0.8em;
+    padding-top: 1.5em;
+    padding-bottom: 1em;
+  }
+
+  &__hr {
+    position: relative;
+    margin: 0px;
+    height: 5px;
+    background-color: $pink;
+    width: 100%;
+  }
+  &__hr1 {
+    position: relative;
+    top: 3em;
+    margin: 0px;
+    height: 5px;
+    background-color: $pink;
+    width: 100%;
+  }
+}
+
+/* 
+========================================================================== */
+/* Footer
+/* 64em = 1024px @ 16px font
+==========================================================================
+*/
+
+@media screen and (min-width: 1024px) {
+  .footer {
+    flex-direction: row;
+    height: 5em;
+    margin-bottom: 2em;
+
+    &__p {
+      @include paragraph_laptop();
+
+      font-size: 1.5em;
+      text-align: left;
+      padding-left: 5em;
+    }
+
+    &__socialmedia {
+      position: absolute;
+      left: 9em;
+      font-size: 1.5em;
+
+    }
+
+    &__copyright {
+      padding-right: 8em;
+      margin-left: auto;
+      font-size: 1.3em;
+    }
+
+    &__hr {
+        top: 3em;
+    }
+    &__hr1 {
+      position: relative;
+      top: 3em;
+      margin: 0px;
+      height: 5px;
+      background-color: $pink;
+      width: 100%;
+    }
+  }
+}

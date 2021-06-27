@@ -1,0 +1,214 @@
+/*==============================
+	Trending Section
+==============================*/
+.trending__section{
+	position: relative;
+	padding: 1em 0;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	background-color: $bgc_header;
+	transition: 0.4s ease;
+	
+	box-shadow: 05px 10px 25px 5px rgba(0, 0, 0, 0.3);
+	border-top: 1px solid rgba(255, 255, 255, 0.05);
+  
+  }
+  
+  .trending__container {
+	position: relative;
+	z-index: 3;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 90%;
+	
+  
+  }
+  
+  .trending__title {
+	position: relative;
+	left: 3vw;
+	color: $white;
+	font-weight: 300;
+	font-size: 1em;
+	margin-bottom: 25px;
+	font-family: $Font-Family;
+  
+  }
+  
+  .trending__items {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	overflow-x: auto;
+	flex-wrap: nowrap;
+  
+  }
+
+  .trending__items::-webkit-scrollbar{
+	  width: 0;
+
+  }
+
+
+  .trending__card {
+	position: relative;
+	width: 15vw;
+	overflow: hidden;
+	margin: 0.3em;
+  
+  }
+  
+  .trending__cover{
+	position: relative;
+	transition: transform 0.2s;
+  
+  
+	img {
+	  position: relative;
+	  max-width: 15vw;
+	}
+  }
+  
+  .trending__cover:hover{
+	cursor: pointer;
+	  transform: scale(1.1);
+	transition: 0.5s ease;
+	
+  }
+  
+  .image-container:hover .overlay {
+	  opacity: 1;
+  }
+  
+  .trending__content {
+	display: none;
+  }
+
+  
+
+  
+/* 
+==========================================================================
+/*  Trending and upcoming
+/* 48em = 768px @ 16px font
+==========================================================================
+*/
+
+  @media (min-width: 768px) {
+	
+	.section__title {
+	  font-size: 2em;
+	  margin-bottom: 2em;
+	}
+	.section__title--no-margin {
+	  margin-bottom: 20px;
+	}
+	.section__wrap {
+	  flex-direction: row;
+	  justify-content: space-between;
+	  align-items: center;
+	}
+	.section__btn {
+	  margin: 20px auto 15px;
+	}
+	.section--first {
+	  margin-top: 90px;
+	}
+  }
+/* 
+========================================================================== */
+/* Trending and upcoming
+/* 64em = 1024px @ 16px font
+==========================================================================
+*/
+
+  @media (min-width: 1024px) {
+	.section__title {
+	  font-size: 2.2em;
+	}
+	.section__title--sidebar {
+	  font-size: 32px;
+	}
+  
+	
+	.trending__title {
+	  
+	  font-size: 2.5em;
+	}
+	
+	.trending__card {
+	  width: 12vw;
+	  margin: 0.5em;
+	
+	}
+	
+	.trending__cover{
+	  position: relative;
+	
+	
+	  img {
+		position: relative;
+		width: 12vw;
+	  }
+	}
+	.trending__content {
+		position: relative;
+		display: block;
+		//display: none;
+		margin-top: 20px;
+		margin-left: 10px;
+		margin-bottom: 10px;
+	  }
+
+	.trending__title {
+		font-size: 2.5em;
+	  }
+
+	  .card__title--trending {
+		font-size: 1.1em;
+		width: 90%;
+		font-weight: 400;
+		padding-bottom: 0.5em;
+		font-family: $Font-Family;
+		color: $font_color;
+		margin: 0;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		word-wrap: break-word;
+		cursor: pointer;
+	  }
+	
+	  .card__category--trending {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: flex-start;
+		padding-bottom: 0.5em;
+		font-family: $Font-Family;
+		flex-wrap: wrap;
+		color: $pink;
+		font-size: 1em;
+	  }
+	
+	  .card__title--trending a {
+		color: $font_color;
+	  }
+	 
+	  .card__rate--trending {
+		font-size: 1em;
+		font-weight: 500;
+		color: $font_color;
+		position: relative;
+		display: inline-flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		margin-top: 5px;
+		padding-bottom: 1em;
+		font-family: $Font-Family;
+	  }
+  }

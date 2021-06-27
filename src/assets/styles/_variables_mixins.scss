@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
+
+$bgc_dark:#2b2b31;
+$bgc_body: rgba(43,43,49,0.75);  
+$bgc_header: #28282d;
+
+$black: black;
+$white: white;
+$font_color: rgba(255,255,255,0.7);;
+$pink: #ff55a5;
+$orange: #ff5860;
+$gray: rgba(255,255,255,0.65);
+$dark_gray: rgba(255,255,255,0.26);
+$pink_gradient: linear-gradient(90deg, #ff55a5 0%, #ff5860 100%);
+$pink_shadow: rgba(255,88,96,0.5);
+
+$Font-Family: 'Ubuntu Condensed', sans-serif;
+$Roboto: 'Roboto', sans-serif;
+
+
+
+@mixin h1_mobile {
+  font-family: $Font-Family;
+  font-size: 1.5625em;
+  color: $font_color;
+  letter-spacing: 0;
+  line-height: 33px;
+  font-weight: 700;
+
+}
+
+
+@mixin h1_laptop {
+  font-family: $Font-Family;
+  font-size: 2.2em;
+  color: $font_color;
+  letter-spacing: 0;
+  line-height: 50px;
+  font-weight: 700;
+}
+
+@mixin h2_mobile {
+  font-family: $Font-Family;
+  font-size: 1.2em;
+  color: $font_color;
+  letter-spacing: 0;
+  line-height: 25px;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+@mixin h2_laptop {
+  font-family: $Font-Family;
+  font-size: 1.5625em;
+  color: $font_color;
+  letter-spacing: 0;
+  line-height: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+@mixin h3_mobile {
+  font-family: $Font-Family;
+  font-size: 0.8em;
+  color: $font_color;
+  letter-spacing: 0;
+  font-weight: bold;
+  text-align: center;
+  line-height: 25px;
+
+}
+
+@mixin h3_laptop {
+  font-family: $Font-Family;
+  font-size: 1em;
+  color: $font_color;
+  letter-spacing: 0;
+  font-weight: bold;
+  text-align: center;
+  line-height: 25px;
+}
+
+@mixin h4_mobile {
+  font-family: $Font-Family;
+  font-size: 0.875em;
+  color: $font_color;
+  letter-spacing: 0;
+  font-weight: 400;
+  text-align: center;
+  line-height: 25px;
+
+}
+
+@mixin h4_laptop {
+  font-family: $Font-Family;
+  font-size: 1em;
+  color: $font_color;
+  letter-spacing: 0;
+  font-weight: 400;
+  text-align: center;
+  line-height: 25px;
+}
+
+
+@mixin paragraph_mobile {
+  font-family: $Font-Family;
+  color: $font_color;
+  letter-spacing: 0;
+  line-height: 15px;
+  font-weight: normal;
+}
+
+
+@mixin paragraph_laptop {
+font-family: $Font-Family;
+color: $font_color;
+letter-spacing: 0;
+line-height: 15px;
+font-weight: 400;
+
+}
+
+
+
