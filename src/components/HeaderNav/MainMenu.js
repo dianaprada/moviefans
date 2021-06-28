@@ -2,6 +2,7 @@
  * Import Components
  */
 import React from "react";
+import Nav from "./Nav"
 
 /**
  * @method MainMenu
@@ -20,6 +21,7 @@ const MainMenu = () => {
             alt="MovieFans Logo"
           />
         </a>
+        <Nav />
       </nav>
       <h1 className="header__h1" aria-label="MovieFans Main Tittle">
         <span className="h1_pink">MovieFans</span> – Movies, &amp; Cinema Info

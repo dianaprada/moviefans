@@ -9,6 +9,7 @@ import "./assets/styles/styles.css";
  * Import Components
  */
 import MainMenu from "./components/HeaderNav/MainMenu";
+
 import SearchBox from "./components/Search/SearchBox";
 import SearchResults from "./components/Search/SearchResults";
 import Popup from "./components/Modal/Popup";

@@ -21,10 +21,27 @@ import { faStar, faWindowClose } from "@fortawesome/free-solid-svg-icons";
  */
 
 const Popup = ({ selected, closePopup }) => {
-  
+
   let releaseYear = selected.release_date.slice(0, 4);
   let budget = (new Intl.NumberFormat().format(selected.budget));
   let count = (new Intl.NumberFormat().format(selected.vote_count));
+  let country = "";
+  let genre = "";
+
+
+  if (selected.production_countries.length === 0){
+    country = "T.B.D.";
+  }
+  else {
+     country = selected.production_countries[0].name;
+  }
+
+  if (selected.genres.length === 0){
+    genre = " T.B.D.";
+  }
+  else {
+    genre = selected.genres[0].name;
+  }
 
   return (
     <section className="popup">
@@ -60,7 +77,7 @@ const Popup = ({ selected, closePopup }) => {
             </div>
             <ul className="card__meta">
               <li aria-label="Movie Genres"><span>Genre:</span> 
-                {selected.genres.name}
+                {genre}
               </li>
               <li aria-label="Movie Budget">
                 <span>Budget:</span>
@@ -72,7 +89,7 @@ const Popup = ({ selected, closePopup }) => {
               <li aria-label="Movie Run Time">
                 <span>Running time:</span> {selected.runtime} min</li>
               <li aria-label="Movie Production Countries">
-                <span>Country:</span> {selected.production_countries.name}
+                <span>Country:</span> {country}
               </li>
             </ul>
             <div className="card__description card__description--details" aria-label="Plot">

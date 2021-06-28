@@ -16,7 +16,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 const SearchBox = ({ handleInput, search }) => {
   return (
     <section>
-      <div className="header__search">
+      <div className="header__search" name="Search" id="Search">
         <div className="header__search-content">
           <label htmlFor="search_box" className="search__label" />
           <input

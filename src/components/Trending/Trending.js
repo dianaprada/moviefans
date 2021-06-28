@@ -15,7 +15,7 @@ import TrendingCards from "./TrendingCards";
 
 const Trending = ({ trendingResults, openPopup  }) => {
   return (
-    <section className="trending__section" aria-label="Trending Movies">
+    <section className="trending__section" aria-label="Trending Movies" name="Trending" id="Trending">
       <div className="trending__container">
         {/* section title */}
         <h2 className="trending__title">Trending Movies</h2>

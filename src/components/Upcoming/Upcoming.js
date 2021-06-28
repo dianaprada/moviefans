@@ -14,7 +14,7 @@ import UpcomingCards from "./UpcomingCards";
 
  const Upcoming = ({ upcomingResults, openPopup  }) => {
   return (
-    <section className="trending__section" aria-label="Upcoming Movies">
+    <section className="trending__section" aria-label="Upcoming Movies" name="Upcoming" id="Upcoming">
       <div className="trending__container">
         {/* section title */}
         <h2 className="trending__title">Upcoming Movies</h2>
