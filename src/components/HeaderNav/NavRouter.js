@@ -4,7 +4,7 @@
  
  import React, { useState } from "react";
  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
- import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+ import { faBars } from "@fortawesome/free-solid-svg-icons";
  
  import { Link } from "react-router-dom";
 
@@ -19,7 +19,6 @@
   */
  
  const NavRouter = () => {
-     const [ isMobile, setIsMobile] = useState(true);
    return (
      <React.Fragment>
        {/* header nav */}
@@ -41,14 +40,6 @@
            </Link>
          </li>
        </ul>
-
-       <button className="header__mobile-icon" aria-label="Mobile Menu" aria-roledescription="Button" >
-         {isMobile ? 
-            ( <FontAwesomeIcon icon={faTimes} className="header__nav--icon" /> ) 
-            : 
-            ( <FontAwesomeIcon icon={faBars} className="header__nav--icon" /> )
-         }
-       </button>
        {/* end header nav */}
      </React.Fragment>
    );

@@ -3,6 +3,11 @@
  */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 import "./assets/styles/styles.css";
 
 /**
@@ -12,6 +17,7 @@ import MainMenu from "./components/HeaderNav/MainMenu";
 
 import SearchBox from "./components/Search/SearchBox";
 import SearchResults from "./components/Search/SearchResults";
+import SearchNoResults from "./components/Search/SearchNoResults"
 import Popup from "./components/Modal/Popup";
 import Trending from "./components/Trending/Trending"
 import Upcoming from "./components/Upcoming/Upcoming"
@@ -127,8 +133,10 @@ const App = () => {
       axios(TRENDING_URL)
       .then(({ data }) => {
         
+        //let trendingMoviesResults = data.results;
+
         let trendingTemp = data.results;
-        let trendingMoviesResults = trendingTemp.splice(0, 8);
+        let trendingMoviesResults = trendingTemp.splice(0, 15);
         
         console.log("TRENDING MOVIES: ", trendingMoviesResults);
   
@@ -149,8 +157,11 @@ const App = () => {
      const getUpcomingMovies = () => {
       axios(UPCOMING_URL + "?api_key=" + API_KEY)
       .then(({ data }) => {
+
+        //let upcomingMoviesResults = data.results;
+
         let upcomingMoviesTemp = data.results;
-        let upcomingMoviesResults = upcomingMoviesTemp.splice(0, 6);
+        let upcomingMoviesResults = upcomingMoviesTemp.splice(0, 18);
   
         console.log("UPCOMING MOVIES: ", upcomingMoviesResults);  
   
@@ -202,55 +213,95 @@ const App = () => {
   };
 
   return (
-    <div className="content">
-      {/* header */}
-      <MainMenu />
-      {/* end header */}
+    <Router>
+      <div className="content">
+        {/* header */}
+        <MainMenu />
+        {/* end header */}
 
-      {/* Main */}
-      <main>
-        {/* Search Box */}
-        <SearchBox handleInput={handleInput} search={search} />
-        {/* end Search Box */}
+        {/* Main */}
+        <main>
+          <Switch>
+            <Route exact path="/">
+              {/* Search Box */}
+              <SearchBox handleInput={handleInput} search={search} />
+              {/* end Search Box */}
 
-        {/* Search results */}
-        <SearchResults results={searchMovies.results} openPopup={openPopup} />
-        {/* end Search results */}
+              {/* Search results */}
 
-        {/* Popup */}
-        {typeof searchMovies.selected.title != "undefined" ? (
-          <Popup selected={searchMovies.selected} closePopup={closePopup} />
-        ) : (
-          false
-        )}
-        {/* End Popup*/}
-        
-        {/* Trending Section */}
-        <Trending  trendingResults={trendingMovies.trendingResults} openPopup={openPopup}  />
-        {typeof trendingMovies.trendingSelected.id != "undefined" ? (
-          <Popup selected={trendingMovies.trendingSelected} closePopup={closePopup} />
-        ) : (
-          false
-        )}
-       
-        {/* End Trending Section */}
+              {searchMovies.results.length > 0 ? (
+                <SearchResults
+                  results={searchMovies.results}
+                  openPopup={openPopup}
+                />
+              ) : (
+                <SearchNoResults />
+              )}
 
-        {/* Upcoming Section */}
-        <Upcoming upcomingResults={upcomingMovies.upcomingResults} openPopup={openPopup}  />
-        {typeof upcomingMovies.upcomingSelected.id != "undefined" ? (
-          <Popup selected={upcomingMovies.upcomingSelected} closePopup={closePopup} />
-        ) : (
-          false
-        )}
-        {/* End Upcoming Section */}
+              {/* end Search results */}
+            </Route>
 
-      </main>
-      {/* End Main */}
+            <Route path="/trending">
+              {/* Trending Section */}
+              <Trending
+                trendingResults={trendingMovies.trendingResults}
+                openPopup={openPopup}
+              />
 
-      {/* Footer */}
-      <Footer />
-      {/* End Footer */}
-    </div>
+              {/* End Trending Section */}
+            </Route>
+
+            <Route path="/upcoming">
+              {/* Upcoming Section */}
+              <Upcoming
+                upcomingResults={upcomingMovies.upcomingResults}
+                openPopup={openPopup}
+              />
+
+              {/* End Upcoming Section */}
+            </Route>
+          </Switch>
+
+          {/* Search Popup */}
+          {typeof searchMovies.selected.title != "undefined" ? (
+            <Popup selected={searchMovies.selected} closePopup={closePopup} />
+          ) : (
+            false
+          )}
+          {/* End Search Popup*/}
+
+          {/* Trending Popup */}
+
+          {typeof trendingMovies.trendingSelected.id != "undefined" ? (
+            <Popup
+              selected={trendingMovies.trendingSelected}
+              closePopup={closePopup}
+            />
+          ) : (
+            false
+          )}
+
+          {/* End Popup */}
+
+          {/* Upcoming Popup */}
+
+          {typeof upcomingMovies.upcomingSelected.id != "undefined" ? (
+            <Popup
+              selected={upcomingMovies.upcomingSelected}
+              closePopup={closePopup}
+            />
+          ) : (
+            false
+          )}
+          {/* END Upcoming Popup  */}
+        </main>
+        {/* End Main */}
+
+        {/* Footer */}
+        <Footer />
+        {/* End Footer */}
+      </div>
+    </Router>
   );
 };
 

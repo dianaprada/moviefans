@@ -50,6 +50,7 @@
   color: $orange;
 }
 
+
 .details__container {
   position: relative;
   margin: 1em;
@@ -67,7 +68,7 @@
 .details__title {
   @include h1_laptop();
   text-align: left;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 .card__details {
@@ -88,7 +89,7 @@
   
   img {
     position: relative;
-    width: 60vw;
+    width: 50vw;
     border-radius: 10px;
     top: 0;
   }
@@ -102,7 +103,7 @@
 .card__meta {
   margin-top: 5px;
   display: block;
-  font-size: 1em;
+  font-size: 0.9em;
   line-height: 24px;
   color: rgba(255, 255, 255, 0.7);
 }
@@ -120,7 +121,7 @@
   flex-wrap: wrap;
   width: 100%;
   font-family: $Font-Family;
-  font-size: 1em;
+  font-size: 0.9em;
 }
 
 /* 
